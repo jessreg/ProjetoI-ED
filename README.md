@@ -7,6 +7,7 @@ Data de entrega: Terça, 17 de outubro 2023, 23:59
 
 Composição do trabalho:
 - Código no VPL (Descrição no Moodle)
+  - Dica: utilize "avaliar" (e não "executar") para que as entradas sejam automaticamente carregadas
 - Relatório (Descrição abaixo)
 
 Relatório em PDF
