@@ -4,6 +4,7 @@
 #include <stack>
 #include <cstring>
 #include <cctype>
+#include <cstdlib>
 
 using namespace std;
 int main() {
@@ -47,8 +48,7 @@ int main() {
     					pilha.pop();
     				} else {
     					cout << "erro" << endl;
-    					i = 
-    					break;
+    					exit(1);
     				}
     			} 
     				
