@@ -1,9 +1,14 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <stack>
+#include <cstring>
+#include <cctype>
 
 using namespace std;
 int main() {
+
+	stack<string> pilha; //cria uma pilha de strings
 
     char xmlfilename[100];
 
@@ -16,14 +21,49 @@ int main() {
     	while (getline(arquivo, linha)) {
     		size_t tamanho = linha.size();
     		for (size_t i = 0; i < tamanho; i++) {
-    			cout << linha[i] << endl;
+    			string forPilha = "";
+    			//cout << linha[i] << endl;
+    			if (linha[i] == '<' && linha[i+1] != '/') {
+    				i++; // para tirar o '<'
+    				while (linha[i] != '>') {
+    					if (!isspace(linha[i])) {
+                            forPilha.push_back(linha[i]);
+                        } 
+    					i++;
+    				}
+    				pilha.push(forPilha);
+	    			forPilha = "";
+    			}
+    			if (linha[i] == '<' && linha[i+1] == '/') {
+    				i+=2;
+    				while (linha[i] != '>') {
+    					if (!isspace(linha[i])) {
+                            forPilha.push_back(linha[i]);
+                        } 
+    					i++;
+    				}
+    				if (forPilha == pilha.top()) {
+    					cout << pilha.top() << endl;
+    					pilha.pop();
+    				} else {
+    					cout << "erro" << endl;
+    					i = 
+    					break;
+    				}
+    			} 
+    				
+    			
+    			
+
     		} 
     	}
     	arquivo.close();
     } 
-
-
-
+    /*size_t tamPilha = pilha.size();
+    for (size_t i = 0; i < tamPilha; i++ ) {
+    	cout << pilha.top() << endl;
+        pilha.pop(); // Remova o elemento do topo da pilha
+    } */
     //std::cout << xmlfilename << std::endl;  // esta linha deve ser removida
 
     return 0;
