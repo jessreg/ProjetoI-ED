@@ -28,8 +28,8 @@ int main() {
     				i++; // para tirar o '<'
     				while (linha[i] != '>') {
     					if (!isspace(linha[i])) {
-                            forPilha.push_back(linha[i]);
-                        } 
+                            			forPilha.push_back(linha[i]);
+                        		} 
     					i++;
     				}
     				pilha.push(forPilha);
@@ -39,8 +39,8 @@ int main() {
     				i+=2;
     				while (linha[i] != '>') {
     					if (!isspace(linha[i])) {
-                            forPilha.push_back(linha[i]);
-                        } 
+                           			forPilha.push_back(linha[i]);
+                        		} 
     					i++;
     				}
     				if (forPilha == pilha.top()) {
