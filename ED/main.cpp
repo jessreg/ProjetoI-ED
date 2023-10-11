@@ -28,8 +28,8 @@ int main() {
     				i++; // para tirar o '<'
     				while (linha[i] != '>') {
     					if (!isspace(linha[i])) {
-                            			forPilha.push_back(linha[i]);
-                        		} 
+                            forPilha.push_back(linha[i]);
+                        } 
     					i++;
     				}
     				pilha.push(forPilha);
@@ -39,24 +39,29 @@ int main() {
     				i+=2;
     				while (linha[i] != '>') {
     					if (!isspace(linha[i])) {
-                           			forPilha.push_back(linha[i]);
-                        		} 
+                           	forPilha.push_back(linha[i]);
+                        } 
     					i++;
     				}
     				if (forPilha == pilha.top()) {
-    					cout << pilha.top() << endl;
+    					//cout << pilha.top() << endl;
     					pilha.pop();
     				} else {
     					cout << "erro" << endl;
     					exit(1);
     				}
     			} 
+                
     				
-    			
+        	
     			
 
     		} 
     	}
+        if (!pilha.empty()) {
+            cout << "erro" << endl;
+    		exit(1);
+        }
     	arquivo.close();
     } 
     /*size_t tamPilha = pilha.size();
